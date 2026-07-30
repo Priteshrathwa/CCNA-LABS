@@ -30,7 +30,12 @@ Welcome to my hands-on networking portfolio. This public repository tracks my on
 | **11** | VLSM Subnetting | Efficient IP assignment, subnetting down to custom host constraints. |
 | **12** | VLANs (Part 1) | Access port provisioning, data isolation, multi-switch environment tests. |
 | **13** | VLANs (Part 2) | 802.1Q Native VLAN configs, Trunk port mapping across distribution links. |
-
+| **14** | Multilayer Switching | Inter-VLAN routing via SVIs, routed ports, and `ip routing` enablement. |
+| **16** | Analyzing STP | Root bridge election logic, STP port roles (Root, Designated, Blocked), and BPDU analysis. |
+| **17** | Configuring Spanning Tree | STP bridge priority manipulation, PortFast, and BPDU Guard provisioning. |
+| **18** | Rapid STP | 802.1w RSTP transition mechanisms, edge port configurations, and convergence optimization. |
+| **19** | EtherChannel | Link aggregation using LACP (802.3ad), PAgP, and manual bundling on trunk links. |
+| **20** | Floating Static Routes | Administrative Distance (AD) tuning, primary/backup path failover, and redundancy. |
 ---
 
 ## Featured Verification Commands Used
