@@ -8,7 +8,7 @@
 * **R4:** Links to R2/R3, LAN `192.168.4.254`. Loopback0: `4.4.4.4/32`
 
 
-
+```ios
 ! ==================== ROUTER R1 ====================
 enable
 configure terminal
