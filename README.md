@@ -6,10 +6,11 @@ Welcome to my hands-on networking portfolio. This public repository tracks my on
 
 ## Core Technical Competencies Demonstrated
 
-* **Layer 3 Routing:** Static Routing Configuration, Route Troubleshooting, Metric/Administrative Distance logic.
-* **IP Architecture:** Variable Length Subnet Masking (VLSM), IPv4 Schema Design, Network Address Management.
-* **Layer 2 Switching:** Virtual LANs (VLANs), 802.1Q Trunking Encapsulation, Broadcast Domain Isolation, STP Concepts.
-* **Device Hardening:** Base Cisco IOS Security, Console/VTY Line Protection, Management IP Configuration.
+* **Dynamic & Static Routing:** OSPF (Single & Multi-area), EIGRP basics, Floating Static Routes, Administrative Distance tuning, and IPv6 routing.
+* **Layer 2 Infrastructure:** VLANs, 802.1Q Trunks, Voice VLANs, EtherChannel (LACP/PAgP), Rapid STP (802.1w), and STP/HSRP alignment.
+* **Network Services & Redundancy:** First Hop Redundancy (HSRP), DHCP Server/Relay, DNS, NTP, SNMP, Syslog, and NAT/PAT (Static & Dynamic).
+* **Security & Device Hardening:** Standard & Extended ACLs, Port Security, DHCP Snooping, Dynamic ARP Inspection (DAI), and SSH.
+* **Enterprise Connectivity & Wireless:** GRE Site-to-Site Tunnels, QoS traffic marking/queuing, and Wireless LAN Controller (WLC) deployments.
 
 ---
 
@@ -36,15 +37,46 @@ Welcome to my hands-on networking portfolio. This public repository tracks my on
 | **18** | Rapid STP | 802.1w RSTP transition mechanisms, edge port configurations, and convergence optimization. |
 | **19** | EtherChannel | Link aggregation using LACP (802.3ad), PAgP, and manual bundling on trunk links. |
 | **20** | Floating Static Routes | Administrative Distance (AD) tuning, primary/backup path failover, and redundancy. |
+| **21** | EIGRP Configuration | Autonomous system numbers, network advertisements, wildcard masks, and passive interfaces. |
+| **22** | OSPF (Part 1) | Single-area OSPFv2 setup, router ID selection, and adjacency formation. |
+| **23** | OSPF (Part 2) | DR/BDR election tuning via priority, passive interfaces, and default-route injection. |
+| **24** | OSPF (Part 3) | Multi-area OSPF, interface cost manipulation, and hello/dead timer tuning. |
+| **25** | HSRP Configuration | First Hop Redundancy Protocol (FHRP), virtual IPs, priority, and preemption. |
+| **26** | IPv6 Configuration (Part 1) | Global unicast addressing, link-local addresses, and SLAAC/EUI-64 generation. |
+| **27** | IPv6 Configuration (Part 2) | IPv6 neighbor discovery (NDP), Solicited-Node multicast, and router advertisements. |
+| **28** | IPv6 Static Routes | Next-hop IPv6 static routes, link-local interface routing, and default routes (`::/0`). |
+| **29** | Standard ACLs | Numbered/named standard access control lists placed near destinations for traffic filtering. |
+| **30** | Extended ACLs | Protocol, source/destination IP, and Layer 4 port filtering placed close to the traffic source. |
+| **31** | CDP & LLDP | Layer 2 discovery protocols, device neighbor discovery, and TLV verification. |
+| **32** | NTP | Network Time Protocol client/server synchronization, stratum levels, and timezone settings. |
+| **33** | DNS | Domain Name System resolution configuration and Cisco IOS local host-to-IP mappings. |
+| **34** | DHCP | Cisco IOS DHCP server pools, excluded addresses, and DHCP Relay Agent (`ip helper-address`). |
+| **35** | SNMP | Simple Network Management Protocol agent configuration, community strings (RO/RW), and traps. |
+| **36** | Syslog | Centralized log collection, logging severity levels, and buffer management. |
+| **37** | SSH | Remote management hardening, RSA key-pair generation, VTY transport limits, and local auth. |
+| **38** | FTP & TFTP | Remote file system backups, Cisco IOS image management, and configuration loading. |
+| **39** | Static NAT | One-to-one inside local to inside global translation for external-facing servers. |
+| **40** | Dynamic NAT & PAT | Many-to-many dynamic pools and Port Address Translation (NAT Overload) via ACLs. |
+| **41** | Voice VLANs | Auxiliary voice VLAN encapsulation, CoS trust boundaries, and IP phone connectivity. |
+| **42** | QoS | Quality of Service classification, DSCP markings, policing, shaping, and priority queuing. |
+| **43** | Port Security | MAC address learning (Static, Dynamic, Sticky), maximum host limits, and violation modes. |
+| **44** | DHCP Snooping | Layer 2 defense against rogue DHCP servers, trusted vs untrusted ports, and binding database. |
+| **45** | Dynamic ARP Inspection | Mitigating ARP spoofing/poisoning by cross-referencing the DHCP snooping binding table. |
+| **46** | STP & HSRP Synchronization | Aligning STP Root Bridge with HSRP Active Router roles to prevent suboptimal transit paths. |
+| **47** | GRE Tunnels | Generic Routing Encapsulation point-to-point tunnels over simulated IP backbones. |
+| **48** | Wireless LANs | Centralized WLC deployment, lightweight AP (LAP) associations, and WPA2-Enterprise SSIDs. |
+
 ---
 
 ## Featured Verification Commands Used
 
 Every topology in this repository has been verified using production-level verification commands:
-* `show ip route` — To validate Layer 3 routing tables.
-* `show interfaces trunk` — To verify active 802.1Q encapsulation and allowed VLAN lists.
-* `show vlan brief` — To check administrative database access mappings.
-* `ping` / `traceroute` — To verify end-to-end data plane reachability.
+* `show ip route` / `show ipv6 route` — Validate Layer 3 dynamic and static routing tables.
+* `show ip ospf neighbor` / `show ip eigrp neighbors` — Confirm dynamic routing adjacency states.
+* `show standby brief` — Verify HSRP state, priority, and virtual IP failover.
+* `show interfaces trunk` — Check active 802.1Q encapsulation and allowed VLAN lists.
+* `show ip dhcp snooping binding` / `show ip arp inspection` — Audit Layer 2 security defenses.
+* `show ip nat translations` — Inspect active inside/outside address mapping translations.
+* `ping` / `traceroute` — Verify end-to-end data plane reachability across hops.
 
 ---
-*Note: This repository is actively updated as I progress through advanced routing, scaling protocols, and infrastructure security modules. All network files (`.pkt`) are built using Cisco Packet Tracer and are ready for deployment and validation testing.*
